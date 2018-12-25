@@ -10,4 +10,4 @@ if the rating matrix is derived from another source of information (i.e. it is i
 
 пока не до конца понял
 
-[`youtu.be/58OjaDH2FI0?t=509`](https://youtu.be/58OjaDH2FI0?t=509)
+[`суть`](https://youtu.be/58OjaDH2FI0?t=509)
