@@ -14,3 +14,8 @@ see [modeling - How to extract model hyper-parameters from spark.ml in PySpark? 
 ---
 
 По идее нужно делать CV на каждом наборе параметров. Не на одном `random train test split`  а на 3 хотя бы 
+
+
+---
+
+maxIter - as rule of thumb: if `abs(metric[i]` - `metric[i - 1]) < 0.001` - stop iteration
