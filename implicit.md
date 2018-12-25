@@ -6,4 +6,6 @@
 
 https://spark.apache.org/docs/2.3.0/mllib-collaborative-filtering.html#tutorial
 
+if the rating matrix is derived from another source of information (i.e. it is inferred from other signals), you can set implicitPrefs to True to get better results:
+
 пока не до конца понял
