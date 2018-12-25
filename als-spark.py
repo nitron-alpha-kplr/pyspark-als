@@ -11,6 +11,7 @@ from pyspark.ml.tuning import TrainValidationSplit, ParamGridBuilder
 from pyspark.sql.types import *
 
 from itertools import product
+import numpy as np
 
 schema = StructType([
     StructField('user'     , IntegerType()),
@@ -26,7 +27,6 @@ ratings.show()
 train, test = ratings.randomSplit([0.8, 0.2])
 
 
-
 param_fixed = {
     'userCol'          : 'user', 
     'itemCol'          : 'movie', 
@@ -35,23 +35,10 @@ param_fixed = {
     'nonnegative'      : True,
 }
 
-# param_grid = {
-#     'rank'    : [12, 13, 14],
-#     'maxIter' : [18, 19, 20],
-#     'regParam': [0.17, 0.18],
-# }
-
-# param_grid = {
-#     'rank'    : range(4, 12),
-#     'maxIter' : range(2, 20, 2),
-    # 'regParam': [0.1, 0.2, 0.3, 0.4],
-# }
-
-import numpy as np
 param_grid = {
-    'rank'    : range(1, 12),
+    'rank'    : range(4, 12),
     'maxIter' : range(2, 20, 2),
-    'regParam': np.linspace(0.001, 0.3, 10),
+    'regParam': list(np.linspace(0.001, 0.4, 10)),
 }
 
 pgrid = [
@@ -60,9 +47,8 @@ pgrid = [
 ]
 
 # random search instead of grid search
-from random import shuffle
-shuffle(pgrid)
-pgrid = pgrid[:100]
+from random import sample
+pgrid = sample(pgrid, 100)
 
 def evaluate_params(params, model_class, param_fixed, evaluator, train, test):
     model = model_class(**params, **param_fixed)
