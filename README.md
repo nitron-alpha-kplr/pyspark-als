@@ -7,3 +7,15 @@ maxIter - as rule of thumb: if `abs(metric[i]` - `metric[i - 1]) < 0.001` - stop
 [Тут пишут](https://spark.apache.org/docs/latest/mllib-collaborative-filtering.html), что ALS typically converges to a reasonable solution in 20 iterations or less. Хз мне кажется мало, потому что чет не очень в тему предлагает по жанрам)
 
 ---
+
+
+---
+
+grouplens dataset contains explicit ratings  
+but my real dataset is implicit feedback data  
+so I use implicit here for code consistency  
+the only difference is `implicitPrefs=True` and additional `alpha` parameter
+
+также графики тоже стремные, потому что я юзаю implicit, хотя данные explicit. Делаю так потому чтобы code consistency был
+
+в принципе можно просто grouplens dataset отскейлить, но пофиг
