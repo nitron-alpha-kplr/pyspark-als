@@ -2,7 +2,7 @@ Cool way to do grid search in pyspark is using `TrainValidationSplit`/`CrossVali
 but it is broken for many models including `ALS`:  
 `bestModel` does not contains needed params, which you specify in ParamGridBuilder and want to optimize. So it's useless
 
-therefore I use my own grid search implementation instead
+therefore I use my own grid search implementation instead (btw I use random search instead of grid search)
 
 see [modeling - How to extract model hyper-parameters from spark.ml in PySpark? - Stack Overflow](https://stackoverflow.com/questions/36697304/how-to-extract-model-hyper-parameters-from-spark-ml-in-pyspark)
 
@@ -23,5 +23,4 @@ tvs = TrainValidationSplit(
 train, test = ratings.randomSplit([0.8, 0.2])
 
 best_model = tvs.fit(train).bestModel
-
 ```
