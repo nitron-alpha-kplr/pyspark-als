@@ -11,11 +11,3 @@ if the rating matrix is derived from another source of information (i.e. it is i
 пока не до конца понял
 
 [`суть`](https://youtu.be/58OjaDH2FI0?t=509)
-
-
----
-
-grouplens dataset contains explicit ratings  
-but my real dataset is implicit feedback data  
-so I use implicit here for code consistency  
-the only difference is `implicitPrefs=True` and additional `alpha` parameter
