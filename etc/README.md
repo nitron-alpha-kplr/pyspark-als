@@ -1,4 +1,4 @@
-Cool way to do grid search in pyspark is using `TrainValidationSplit`/`CrossValidator` and `ParamGridBuilder`  
+Cool way to do grid search in pyspark is to use `TrainValidationSplit`/`CrossValidator` and `ParamGridBuilder`  
 but it is broken for many models including `ALS`:  
 `bestModel` does not contains needed params, which you specify in ParamGridBuilder and want to optimize. So it's useless
 
