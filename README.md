@@ -1,25 +1,6 @@
 # pyspark-als
+
 Alternating Least Squares (ALS) matrix factorization using pyspark
-
-
-maxIter - as rule of thumb: if `abs(metric[i]` - `metric[i - 1]) < 0.001` - stop iteration  
-Ну bigger is better, точнее матрица разлагается  
-[Тут пишут](https://spark.apache.org/docs/latest/mllib-collaborative-filtering.html), что ALS typically converges to a reasonable solution in 20 iterations or less. Хз мне кажется мало, потому что чет не очень в тему предлагает по жанрам)
-
----
-
-
----
-
-grouplens dataset contains explicit ratings  
-but my real dataset is implicit feedback data  
-so I use implicit here for code consistency  
-the only difference is `implicitPrefs=True` and additional `alpha` parameter
-
-также графики тоже стремные, потому что я юзаю implicit, хотя данные explicit. Делаю так потому чтобы code consistency был
-
-в принципе можно просто grouplens dataset отскейлить, но пофиг
-
 
 ----------------------------------------------------------------
 
@@ -40,5 +21,16 @@ if the rating matrix is derived from another source of information (i.e. it is i
 
 [`суть`](https://youtu.be/58OjaDH2FI0?t=509)
 </details>
+
+
+grouplens dataset contains explicit ratings  
+but my real dataset is implicit feedback data  
+so I use implicit here for code consistency  
+the only difference is `implicitPrefs=True` and additional `alpha` parameter
+
+также графики тоже стремные, потому что я юзаю implicit, хотя данные explicit. Делаю так потому чтобы code consistency был
+
+в принципе можно просто grouplens dataset отскейлить, но пофиг
+
 
 ----------------------------------------------------------------
