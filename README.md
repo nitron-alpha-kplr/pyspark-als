@@ -20,7 +20,6 @@ if the rating matrix is derived from another source of information (i.e. it is i
 пока не до конца понял
 
 [`суть`](https://youtu.be/58OjaDH2FI0?t=509)
-</details>
 
 
 grouplens dataset contains explicit ratings  
@@ -32,5 +31,6 @@ the only difference is `implicitPrefs=True` and additional `alpha` parameter
 
 в принципе можно просто grouplens dataset отскейлить, но пофиг
 
+</details>
 
 ----------------------------------------------------------------
