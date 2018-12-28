@@ -67,7 +67,7 @@ best_model = tvs.fit(train).bestModel
 ```
 maxIter не надо искать, с ним все понятно: bigger is better (точнее матрица разлагается)
 maxIter - as rule of thumb: if `abs(metric[i] - metric[i - 1]) < 0.001` - stop iteration
-(ну нет api-доступа к внутренностям)
+(ну нет api-доступа к внутренностям)  
 [Тут пишут](https://spark.apache.org/docs/latest/mllib-collaborative-filtering.html), что ALS typically converges to a reasonable solution in 20 iterations or less. Хз в принципе можно и больше делать
 
 </details>
