@@ -24,4 +24,7 @@ def make(*args, spark=None):
             ])
             movies  = spark.read.csv('ml-latest-small/movies.csv' , header=True, schema=movies_schema ).select(['movie', 'title', 'genres'])
             result.append(movies)
-    return tuple(result)
+    if len(result) == 1:
+        return result[0]
+    else:
+        return tuple(result)
